@@ -3,6 +3,7 @@ const router = require('express').Router();
 const sessionRouter = require("./session");
 const usersRouter = require("./users");
 const { restoreUser } = require('../../utils/auth.js');
+const { requireAuth } = require('../../utils/auth.js');
 
 router.use(restoreUser);
 
@@ -22,7 +23,6 @@ router.get(
   }
 );
 
-const { requireAuth } = require('../../utils/auth.js');
 router.get(
   '/require-auth',
   requireAuth,
