@@ -22,7 +22,10 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: "Users"
+        }
       },
       startDate: {
         type: Sequelize.DATE,
