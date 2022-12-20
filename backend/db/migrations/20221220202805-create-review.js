@@ -2,22 +2,34 @@
 
 const { options } = require('../../routes');
 
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;  // define your schema in options object
+}
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('ReviewImages', {
+    await queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      reviewId: {
+      spotId: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      url: {
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      review: {
         type: Sequelize.STRING,
+        allowNull: false
+      },
+      stars: {
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {
@@ -33,7 +45,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = "ReviewImages"
+    options.tableName = "Reviews"
     await queryInterface.dropTable(options);
   }
 };
