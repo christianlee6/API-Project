@@ -9,34 +9,29 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    options.tableName = 'Reviews';
+    options.tableName = 'ReviewImages';
     return queryInterface.bulkInsert(options, [
       {
-        spotId: 1,
-        userId: 1,
-        review: "Owner was not friendly and didn't communicate well. Home was dirty.",
-        stars: 1
+        reviewId: 1,
+        url: "www.this-is-a-url-to-a-review.com",
       },
       {
-        spotId: 2,
-        userId: 2,
-        review: "Relaxing and comfortable stay. Very welcoming and hospitable.",
-        stars: 4
+        reviewId: 2,
+        url: "www.this-is-another-url-to-a-review.com",
       },
       {
-        spotId: 3,
-        userId: 3,
-        review: "Beautiful view as advertised.",
-        stars: 5
-      }
+        reviewId: 3,
+        url: "www.another-review-url",
+      },
+
     ], {});
   },
 
   down: async (queryInterface, Sequelize) => {
-    options.tableName = 'Reviews';
+    options.tableName = 'ReviewImages';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(options, {
-      spotId: { [Op.in]: [1, 2, 3] }
+      reviewId: { [Op.in]: [1, 2, 3] }
     }, {});
   }
 };
