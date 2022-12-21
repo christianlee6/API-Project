@@ -20,7 +20,7 @@ module.exports = {
                 lat: 40.98118,
                 lng: -74.11363,
                 name: "Townhouse in NYC Suburb",
-                description: "Cozy townhouse 30 minutes away from New York City with garage.",
+                description: "Cozy townhouse 30 minutes away from New York City.",
                 price: 249
             },
             {
@@ -32,7 +32,7 @@ module.exports = {
                 lat: 33.68654,
                 lng: -117.78170,
                 name: "Condo in Irvine",
-                description: "Relaxing 2 bedroom apartment in Irvine 20 minutes from Angel Stadium.",
+                description: "Relaxing 2 bedroom apartment.",
                 price: 379
             },
             {
@@ -43,8 +43,8 @@ module.exports = {
                 country: "United States of America",
                 lat: 33.58938,
                 lng: -117.85940,
-                name: "Beachside Townhouse in Laguna Beach",
-                description: "Modern townhouse on the beach with great view. ",
+                name: "Townhouse on the Beach",
+                description: "Modern townhouse on the beach.",
                 price: 550
             }
         ])
@@ -54,7 +54,7 @@ module.exports = {
         options.tableName = "Spots";
         const Op = Sequelize.Op;
         return queryInterface.bulkDelete(options, {
-            name: { [Op.in]: ["Townhouse in NYC Suburb", "Condo in Irvine", "Beachside Townhouse in Laguna Beach"] }
+            name: { [Op.in]: ["Townhouse in NYC Suburb", "Condo in Irvine", "Townhouse on the Beach"] }
         }, {});
     }
 };
