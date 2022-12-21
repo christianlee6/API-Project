@@ -1,5 +1,6 @@
 'use strict';
 
+const { Sequelize } = require('sequelize');
 const { options } = require('../../routes');
 
 if (process.env.NODE_ENV === 'production') {
