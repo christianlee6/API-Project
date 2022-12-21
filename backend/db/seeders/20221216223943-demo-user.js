@@ -11,19 +11,25 @@ module.exports = {
     options.tableName = 'Users';
     return queryInterface.bulkInsert(options, [
       {
-        email: 'demo@user.io',
+        firstName: "Demo",
+        lastName: "Lition",
         username: 'Demo-lition',
-        hashedPassword: bcrypt.hashSync('password')
+        hashedPassword: bcrypt.hashSync('password'),
+        email: 'demo@user.io'
       },
       {
-        email: 'user1@user.io',
+        firstName: "Fake",
+        lastName: "User1",
         username: 'FakeUser1',
-        hashedPassword: bcrypt.hashSync('password2')
+        hashedPassword: bcrypt.hashSync('password2'),
+        email: 'user1@user.io'
       },
       {
-        email: 'user2@user.io',
+        firstName: "Fake",
+        lastName: "User2",
         username: 'FakeUser2',
-        hashedPassword: bcrypt.hashSync('password3')
+        hashedPassword: bcrypt.hashSync('password3'),
+        email: 'user2@user.io',
       }
     ], {});
   },
