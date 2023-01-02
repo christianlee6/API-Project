@@ -46,7 +46,19 @@ module.exports = {
                 name: "Townhouse on the Beach",
                 description: "Modern townhouse on the beach.",
                 price: 550
-            }
+            },
+            {
+                ownerId: 4,
+                address: "123 Nice Road",
+                city: "Los Angeles",
+                state: "California",
+                country: "United States of America",
+                lat: 22.58938,
+                lng: -55.85940,
+                name: "Skyrise Condo",
+                description: "Fully furnished and modern.",
+                price: 480
+            },
         ])
     },
 

@@ -17,6 +17,11 @@ module.exports = {
         preview: false
       },
       {
+        spotId: 1,
+        url: "www.spot-image-url.com",
+        preview: true
+      },
+      {
         spotId: 2,
         url: "www.this-is-also-a-spot-image-url.com",
         preview: true
@@ -25,7 +30,17 @@ module.exports = {
         spotId: 3,
         url: "www.this-is-another-spot-image-url.com",
         preview: true
-      }
+      },
+      {
+        spotId: 4,
+        url: "www.spot-image-url.com",
+        preview: false
+      },
+      {
+        spotId: 2,
+        url: "www.another-spot-image-url.com",
+        preview: true
+      },
     ], {});
   },
 

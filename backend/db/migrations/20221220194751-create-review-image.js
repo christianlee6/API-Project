@@ -17,7 +17,8 @@ module.exports = {
         allowNull: false,
         references: {
             model: "Reviews"
-        }
+        },
+        onDelete: "cascade"
       },
       url: {
         type: Sequelize.STRING,
