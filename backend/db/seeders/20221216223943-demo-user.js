@@ -1,7 +1,9 @@
 'use strict';
 const bcrypt = require("bcryptjs");
 
-let options = {};
+const { Sequelize } = require('sequelize');
+const { options } = require('../../routes');
+
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
@@ -11,25 +13,32 @@ module.exports = {
     options.tableName = 'Users';
     return queryInterface.bulkInsert(options, [
       {
-        email: 'demo@user.io',
+        firstName: "Demo",
+        lastName: "Lition",
         username: 'Demo-lition',
         hashedPassword: bcrypt.hashSync('password'),
-        firstName: "Demo",
-        lastName: "User"
+        email: 'demo@user.io'
       },
       {
-        email: 'user1@user.io',
+        firstName: "Fake",
+        lastName: "User1",
         username: 'FakeUser1',
         hashedPassword: bcrypt.hashSync('password2'),
-        firstName: "Fake",
-        lastName: "User"
+        email: 'user1@user.io'
       },
       {
-        email: 'user2@user.io',
+        firstName: "Fake",
+        lastName: "User2",
         username: 'FakeUser2',
         hashedPassword: bcrypt.hashSync('password3'),
-        firstName: "Fake",
-        lastName: "User2"
+        email: 'user2@user.io',
+      },
+      {
+        firstName: "Place",
+        lastName: "Holder",
+        username: 'PlaceHolder1',
+        hashedPassword: bcrypt.hashSync('password4'),
+        email: 'placeholder@user.io',
       }
     ], {});
   },
