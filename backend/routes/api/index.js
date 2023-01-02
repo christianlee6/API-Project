@@ -11,6 +11,8 @@ const reviewImagesRouter = require("./review-images")
 const { restoreUser } = require('../../utils/auth.js');
 const { setTokenCookie } = require('../../utils/auth.js');
 const { User } = require('../../db/models');
+const { requireAuth } = require('../../utils/auth.js');
+
 
 router.use(restoreUser);
 
@@ -39,7 +41,6 @@ router.get(
   }
 );
 
-const { requireAuth } = require('../../utils/auth.js');
 router.get(
   '/require-auth',
   requireAuth,

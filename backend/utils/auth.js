@@ -51,7 +51,9 @@ const restoreUser = (req, res, next) => {
   };
 
 // If there is no current user, return an error
-const requireAuth = function (req, _res, next) {
+const requireAuth = [
+    restoreUser,
+    function (req, _res, next) {
     if (req.user) return next();
 
     const err = new Error('Authentication required');
@@ -60,5 +62,5 @@ const requireAuth = function (req, _res, next) {
     err.status = 403;
     return next(err);
   }
-
+];
   module.exports = { setTokenCookie, restoreUser, requireAuth };
